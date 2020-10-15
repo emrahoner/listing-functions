@@ -5,4 +5,4 @@ if [ "$(docker ps -aq -f name=$1)" ]; then
 fi
 
 docker image build -f $3 -t $1:local .
-docker run -p $2:80 -detach --env-file .env --name $1 $1:local
+docker run -p $2:80 -detach --env-file .docker.env --name $1 $1:local
